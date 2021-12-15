@@ -25,7 +25,7 @@ const routes = [
         component: () => import('../views/Tags')
       },
       {
-        path: 'tags/:tag',
+        path: 'tags/:slug',
         name: 'Tag',
         component: () => import('../views/Tag')
       },

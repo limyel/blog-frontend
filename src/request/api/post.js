@@ -21,3 +21,8 @@ export function apiPostHot() {
     let url = baseURL + '/hot';
     return get(url);
 }
+
+export function apiPostTag(slug) {
+    let url = baseURL + '/tag/' + slug;
+    return get(url);
+}
