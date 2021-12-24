@@ -43,6 +43,11 @@ const routes = [
         path: 'search',
         name: 'Search',
         component: () => import('../views/Search')
+      },
+      {
+        path: 'github-redirect',
+        name: 'GithubRedirect',
+        component: () => import('../views/GithubRedirect')
       }
     ]
   }

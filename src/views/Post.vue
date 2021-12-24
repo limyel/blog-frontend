@@ -22,18 +22,7 @@
         
       </div>
       
-      <div class="container flex-row pl-12 pr-12">
-        <div class="container mr-3">
-          <img class="avatar" src="../assets/img/avatar.jpg">
-        </div>
-        <div class="container flex-grow-1">
-          <textarea class="form-textarea resize-vertical"></textarea>
-          <div class="container flex-row-reverse mt-3">
-            <button class="btn btn-successful w-2 color-light">发布</button>
-            <button class="btn btn-info w-2 color-light mr-3">预览</button>
-          </div>
-        </div>
-      </div>
+      <Comment :slug="slug"></Comment>
     </div>
 
   </div>
@@ -43,12 +32,15 @@
 import {toMd} from "@/utils/MarkdownUtil";
 import {apiPostDetail} from "@/request/api/post";
 import {showTimeDetail} from "@/utils/TimeUtil";
+import Comment from "@/components/Comment";
 
 export default {
   name: "Post",
+  components: {Comment},
   data() {
     return {
-      post: {}
+      post: {},
+      slug: ''
     }
   },
   computed: {
@@ -58,7 +50,8 @@ export default {
   },
   mounted() {
     apiPostDetail(this.$route.params['slug']).then(response => {
-      this.post = response.data
+      this.post = response.data;
+      this.slug = this.$route.params['slug'];
     })
   },
   filters: {
