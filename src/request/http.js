@@ -10,7 +10,9 @@ axios.defaults.headers.get["Content-Type"] = "application/json";
 // 对请求进行拦截
 axios.interceptors.request.use(
   config => {
-
+    if (localStorage.JWT_TOKEN) {
+      config.headers.Authorization = "Bearer " + localStorage.JWT_TOKEN;
+    }
     return config;
   },
   error => {

@@ -22,7 +22,7 @@
         
       </div>
       
-      <Comment :slug="slug"></Comment>
+      <Comment :slug="slug" :post-id="post.id"></Comment>
     </div>
 
   </div>

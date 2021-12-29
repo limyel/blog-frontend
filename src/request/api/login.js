@@ -1,6 +1,6 @@
 import {get} from "@/request/http";
 
-export function apiMemberInfo(code) {
+export function apiUserInfo(code) {
     let url = '/blog/oauth/github';
     return get(url, {'code': code});
 }

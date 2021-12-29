@@ -5,18 +5,18 @@
 </template>
 
 <script>
-import {apiMemberInfo} from "@/request/api/login";
+import {apiUserInfo} from "@/request/api/login";
 
 export default {
   name: "GithubRedirect",
   mounted() {
     let code = this.$route.query.code;
     console.log(this.$route.query);
-    apiMemberInfo(code).then(response => {
+    apiUserInfo(code).then(response => {
       let jwt = response.data.jwt;
-      let memberInfo = response.data.memberInfo;
+      let userInfo = response.data.userInfo;
       localStorage.setItem('JWT_TOKEN', jwt);
-      localStorage.setItem('AVATAR', memberInfo.avatar);
+      localStorage.setItem('AVATAR', userInfo.avatar);
       this.$router.push({'name': 'Post', params: {'slug': localStorage.getItem('slug')}});
     })
   }
