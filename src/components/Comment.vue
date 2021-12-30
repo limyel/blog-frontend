@@ -32,7 +32,7 @@
 
     <div class="container flex-row pl-12 pr-12" v-if="isLogin">
       <div class="container mr-3">
-        <img class="avatar" src="../assets/img/avatar.jpg">
+        <img class="avatar" :src="avatar">
       </div>
       <div class="container flex-grow-1">
         <textarea class="form-textarea resize-vertical" v-model="content"></textarea>

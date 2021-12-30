@@ -11,3 +11,8 @@ export function apiCommentByPostId(postId) {
     let url = baseURL + '/post/' + postId;
     return get(url);
 }
+
+export function apiCommentLatest() {
+    let url = baseURL + '/latest';
+    return get(url);
+}

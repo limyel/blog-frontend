@@ -22,44 +22,13 @@
 
     <div class="container border-bottom pb-2 mt-4">
       <div class="mb-4 font-3">最新评论</div>
-      <div class="container font-1 line-height-6 mb-3">
+      <div class="container font-1 line-height-6 mb-3" v-for="(comment, index) in latestComments" :key="index">
         <div>
-          <a href="#" class="color-secondary">limyel</a>:&nbsp;&nbsp;附件是老款的房间里时间分厘卡圣诞节离开的付款了撒旦克里夫山卡拉地方艰苦拉萨的饭卡里说的JFK拉萨酱豆腐立刻决定弗兰克是
+          <a :href="comment.user.htmlUrl" class="color-secondary">{{ comment.user.name }}</a>:&nbsp;&nbsp;{{ comment.content }}
         </div>
         <div class="color-secondary font-1">
-          <a href="#" class="color-secondary">hello world</a>&nbsp;|&nbsp;三天前
-        </div>
-      </div>
-      <div class="container font-1 line-height-6 mb-3">
-        <div>
-          <a href="#">limyel</a>:&nbsp;&nbsp;附件是老款的房间里时间分厘卡圣诞节离开的付款了撒旦克里夫山卡拉地方艰苦拉萨的饭卡里说的JFK拉萨酱豆腐立刻决定弗兰克是
-        </div>
-        <div class="color-secondary font-1">
-          <a href="#" class="color-secondary">hello world</a>&nbsp;|&nbsp;三天前
-        </div>
-      </div>
-      <div class="container font-1 line-height-6 mb-3">
-        <div>
-          <a href="#">limyel</a>:&nbsp;&nbsp;附件是老款的房间里时间分厘卡圣诞节离开的付款了撒旦克里夫山卡拉地方艰苦拉萨的饭卡里说的JFK拉萨酱豆腐立刻决定弗兰克是
-        </div>
-        <div class="color-secondary font-1">
-          <a href="#" class="color-secondary">hello world</a>&nbsp;|&nbsp;三天前
-        </div>
-      </div>
-      <div class="container font-1 line-height-6 mb-3">
-        <div>
-          <a href="#">limyel</a>:&nbsp;&nbsp;附件是老款的房间里时间分厘卡圣诞节离开的付款了撒旦克里夫山卡拉地方艰苦拉萨的饭卡里说的JFK拉萨酱豆腐立刻决定弗兰克是
-        </div>
-        <div class="color-secondary font-1">
-          <a href="#" class="color-secondary">hello world</a>&nbsp;|&nbsp;三天前
-        </div>
-      </div>
-      <div class="container font-1 line-height-6 mb-3">
-        <div>
-          <a href="#">limyel</a>:&nbsp;&nbsp;附件是老款的房间里时间分厘卡圣诞节离开的付款了撒旦克里夫山卡拉地方艰苦拉萨的饭卡里说的JFK拉萨酱豆腐立刻决定弗兰克是
-        </div>
-        <div class="color-secondary font-1">
-          <a href="#" class="color-secondary">hello world</a>&nbsp;|&nbsp;三天前
+          <router-link :to="{name: 'Post', params: {slug: comment.post.slug}}" class="color-secondary">{{ comment.post.title }}</router-link>
+          &nbsp;|&nbsp;{{ comment.createdAt| showTimeShort }}
         </div>
       </div>
     </div>
@@ -75,18 +44,28 @@
 
 <script>
 import {apiPostHot} from "@/request/api/post";
+import {apiCommentLatest} from "@/request/api/comment";
+import {showTimeShort} from "@/utils/TimeUtil";
 
 export default {
   name: "SideBar",
   data() {
     return {
-      hotPosts: []
+      hotPosts: [],
+      latestComments: []
     }
   },
   mounted() {
     apiPostHot().then(response => {
       this.hotPosts = response.data;
+    });
+
+    apiCommentLatest().then(response => {
+      this.latestComments = response.data;
     })
+  },
+  filters: {
+    showTimeShort
   }
 }
 </script>

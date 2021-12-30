@@ -16,7 +16,7 @@ export default {
       let jwt = response.data.jwt;
       let userInfo = response.data.userInfo;
       localStorage.setItem('JWT_TOKEN', jwt);
-      localStorage.setItem('AVATAR', userInfo.avatar);
+      localStorage.setItem('AVATAR', userInfo.avatarUrl);
       this.$router.push({'name': 'Post', params: {'slug': localStorage.getItem('slug')}});
     })
   }
