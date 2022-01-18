@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="stylus">
-
+@import "../assets/css/font-awesome-4.7.0/css/font-awesome.min.css";
 @font-face {
   font-family: 'oppos-sons';
   src: url('../assets/font/OPPOSans-R.ttf')
