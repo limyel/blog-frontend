@@ -11,7 +11,6 @@ export default {
   name: "GithubRedirect",
   mounted() {
     let code = this.$route.query.code;
-    console.log(this.$route.query);
     apiUserInfo(code).then(response => {
       let jwt = response.data.jwt;
       let userInfo = response.data.userInfo;

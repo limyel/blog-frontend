@@ -9,7 +9,7 @@
         <div class="container flex-row font-1 color-secondary mb-5">
           <div>发布于&nbsp;&nbsp;{{ post.createdAt | showTimeShort }}</div>&nbsp;&nbsp;
         </div>
-        <div class="container flex-row font-1 mb-5">
+        <div class="container flex-row font-1 mb-5" v-if="post.tags.length > 0">
           <div class="bg-secondary p-1 mr-3" style="background-color: #dedede" v-for="(tag, index) in post.tags" :key="index">
             <a class="color-secondary" href="#">{{ tag.name }}</a>
           </div>
@@ -20,6 +20,8 @@
         <div class="font-3">
           <router-link :to="{name: 'Post', params: {'slug': post.slug}}">阅读全文&nbsp;></router-link>
         </div>
+
+        <hr/>
       </div>
 
       <Page :page-info="pageInfo"></Page>
