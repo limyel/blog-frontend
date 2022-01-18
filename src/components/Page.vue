@@ -25,7 +25,7 @@ export default {
   computed: {
     getPageNums() {
       let pageNums = []
-      if (this.pageInfo.pages <= 10 && this.pageInfo.pages > 0) {
+      if (this.pageInfo.pages <= 10 && this.pageInfo.pages > 1) {
         pageNums = Array.from({length: this.pageInfo.pages}, (item, index) => index + 1)
       } else if (this.pageInfo.pages > 10) {
         let tmpSet = new Set([1, 2])
