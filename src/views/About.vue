@@ -22,7 +22,7 @@ export default {
     }
   },
   mounted() {
-    apiAbout().then(response => {
+    apiAboutList().then(response => {
       this.aboutList = response.data;
     })
   }
