@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import {apiAbout} from "@/request/api/about";
+import {apiAboutList} from "@/request/api/about";
 
 export default {
   name: "About",
