@@ -59,4 +59,9 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  document.title = "limyel's blog";
+  next();
+})
+
 export default router

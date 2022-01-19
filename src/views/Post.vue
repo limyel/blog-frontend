@@ -52,6 +52,7 @@ export default {
     apiPostDetail(this.$route.params['slug']).then(response => {
       this.post = response.data;
       this.slug = this.$route.params['slug'];
+      document.title = this.post.title + " - limyel's blog";
     })
   },
   filters: {
