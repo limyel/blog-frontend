@@ -6,7 +6,7 @@
         <router-link :to="{name: 'Post', params: {'slug': post.slug}}">{{ post.title }}</router-link>
       </div>
       <div class="color-secondary font-3">
-        {{ post.createdAt| showTimeDetail }}
+        {{ post.createTime| showTimeDetail }}
       </div>
     </div>
 

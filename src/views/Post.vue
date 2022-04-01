@@ -5,7 +5,7 @@
 
       <div class="container font-2">
         <div class="container flex-row">
-          <div class="mb-2">发布于:&nbsp;{{ post.createdAt| showTimeDetail }}</div>&nbsp;&nbsp;/&nbsp;&nbsp;
+          <div class="mb-2">发布于:&nbsp;{{ post.createTime| showTimeDetail }}</div>&nbsp;&nbsp;/&nbsp;&nbsp;
           <div class="mb-2">阅读数:&nbsp;{{ post.views }}</div>
         </div>
         <div class="container flex-row">

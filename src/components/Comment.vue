@@ -15,7 +15,7 @@
               {{ comment.member.name }}
             </div>
             <div class="flex-grow-1">
-              发布于&nbsp;{{ comment.createdAt| showTimeDetail }}
+              发布于&nbsp;{{ comment.createTime| showTimeDetail }}
             </div>
             <div class="" v-if="parentComment !== null && parentComment.id === comment.id">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -28,7 +28,7 @@
         </div>
         <div class="color-secondary font-1">
           <router-link :to="{name: 'Post', params: {slug: comment.post.slug}}" class="color-secondary">{{ comment.post.title }}</router-link>
-          &nbsp;|&nbsp;{{ comment.createdAt| showTimeShort }}
+          &nbsp;|&nbsp;{{ comment.createTime| showTimeShort }}
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@
           {{ year }}
         </div>
         <div class="mb-6 mt-4" style="border-bottom: 1px dashed #e1e1e1; width: 100%" v-for="(post, index) in archives[year]" :key="index">
-          <span class="font-2 color-secondary">{{ post.createdAt| showMonthDay }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="font-2 color-secondary">{{ post.createTime| showMonthDay }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <router-link :to="{name: 'Post', params: {'slug': post.slug}}" class="font-3 color-secondary" href="#">{{ post.title }}</router-link>
         </div>
       </div>
