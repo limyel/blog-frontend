@@ -1,43 +1,42 @@
 <template>
   <div id="about">
-    <div class="container mb-9" v-for="(about, index) in aboutList" :key="index">
-      <div class="font-6 color-secondary" style="font-weight: bold">{{ about.title }}</div>
-      <div class="container pt-2">
-        <li class="font-2 mb-1" style="list-style-type: circle" v-for="(aboutItem, index) in about.items" :key="index">
-          <a :href="aboutItem.link" class="color-info">{{ aboutItem.name }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ aboutItem.description }}
-        </li>
-      </div>
-    </div>
+    <v-md-preview :text="about"/>
   </div>
 </template>
 
 <script>
-import {apiAboutList} from "@/request/api/about";
+import {apiAbout} from "@/request/api/about";
+import {toMd} from "@/utils/MarkdownUtil";
 
 export default {
   name: "About",
   data() {
     return {
-      aboutList: []
+      about: ""
+    }
+  },
+  computed: {
+    getContent() {
+      return toMd(this.about)
     }
   },
   mounted() {
-    apiAboutList().then(response => {
-      this.aboutList = response.data;
+    apiAbout().then(response => {
+      this.about = response.data.content;
     })
   }
 }
 </script>
 
 <style lang="stylus">
-@media screen and (min-width: 1500px)
-  #about
-    width 50%
-    margin-left 25%
+  @media screen and (min-width: 1500px)
+    #about
+      width 50%
+      margin-left 25%
 
-@media screen and (max-width 1500px)
-  #about
-    width 60%
-    margin-left 20%
+  @media screen and (max-width 1500px)
+    #about
+      width 60%
+      margin-left 20%
 
 </style>

@@ -13,7 +13,7 @@
         </div>
       </div>
 
-      <div id="post-content" class="container font-3 line-height-8 mt-8" v-html="getContent"></div>
+      <v-md-preview :text="post.content"></v-md-preview>
 
     </div>
 
@@ -78,42 +78,5 @@ export default {
   //    width 60%
   //    margin-left 20%
 
-
-  #post-content
-    white-space normal
-    word-break break-all
-    overflow hidden
-    pre
-      padding 10px
-      border-radius 5px
-      *
-        font-family jetbrains-mono
-    h1, h2, h3, h4, h5, h6
-      margin-top 20px
-      margin-bottom 10px
-      padding-left 5px
-      font-weight normal
-    h1
-      font-size 1.2rem
-      border-left 3px #1C1C1C solid
-    h2
-      font-size 1.1rem
-      border-left 3px #696969 solid
-    h3
-      font-size 1rem
-      border-left 3px #B5B5B5 solid
-    h4
-      font-size 0.9rem
-      border-left 3px #E8E8E8 solid
-    h5
-      font-size 0.8rem
-    h6
-      font-size 0.7rem
-
-    p
-      margin 5px 0
-    ul
-      list-style-type disc
-      list-style-position inside
 
 </style>

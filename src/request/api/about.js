@@ -1,8 +1,8 @@
 import {get} from "@/request/http";
 
-let baseURL = '/blog/abouts'
+let baseURL = '/blog/posts/about'
 
-export function apiAboutList() {
+export function apiAbout() {
     let url = baseURL;
     return get(url);
 }
