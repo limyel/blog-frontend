@@ -26,3 +26,8 @@ export function apiPostTag(slug) {
     let url = baseURL + '/tag/' + slug;
     return get(url);
 }
+
+export function apiWeekly() {
+    let url = baseURL + '/weekly';
+    return get(url);
+}

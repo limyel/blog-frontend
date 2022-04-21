@@ -35,6 +35,11 @@ const routes = [
         component: () => import('../views/Post')
       },
       {
+        path: 'weekly',
+        name: "Weekly",
+        component: () => import('../views/Weekly')
+      },
+      {
         path: 'about',
         name: 'About',
         component: () => import('../views/About')

@@ -29,6 +29,9 @@ export default {
   watch: {
     "$route.path"() {
       this.activeNav = this.$route.name
+      if (this.activeNav === 'Tag') {
+        this.activeNav = 'Tags'
+      }
     }
   },
   mounted() {
