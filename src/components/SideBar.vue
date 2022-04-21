@@ -4,7 +4,7 @@
       <div class="mb-4 font-3">关于我</div>
       <img src="../assets/img/me.png"/>
       <div class="mt-4 font-2 line-height-6">
-        程序员，在福州，使用 Java、Python、Go 和 TypeScript 开发。
+        程序员，泉州人在福州，使用 Java、Python、Go 和 TypeScript 开发。
       </div>
       <div class="container flex-row font-4 mt-4">
         <div class="mr-4">
