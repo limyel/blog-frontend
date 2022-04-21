@@ -2,9 +2,9 @@
   <div id="side-bar" class="container ml-12">
     <div class="container border-bottom pb-4">
       <div class="mb-4 font-3">关于我</div>
-      <img src="../assets/img/avatar.jpg"/>
-      <div class="mt-4 font-2">
-        程序员，使用 Java、Python。
+      <img src="../assets/img/me.png"/>
+      <div class="mt-4 font-2 line-height-6">
+        程序员，使用 Java、Python、Go 和 TypeScript 开发。
       </div>
       <div class="container flex-row font-4 mt-4">
         <div class="mr-4">
