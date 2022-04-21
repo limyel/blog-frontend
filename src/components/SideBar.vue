@@ -2,7 +2,7 @@
   <div id="side-bar" class="container ml-12">
     <div class="container border-bottom pb-4">
       <div class="mb-4 font-3">关于我</div>
-      <img src="../assets/img/me.png"/>
+      <img src="../assets/img/me.png" alt="limyel"/>
       <div class="mt-4 font-2 line-height-6">
         程序员，泉州人在福州，使用 Java、Python、Go 和 TypeScript 开发。
       </div>
