@@ -39,4 +39,7 @@ export default {
       width 60%
       margin-left 20%
 
+  .github-markdown-body
+    padding 30px 0
+
 </style>

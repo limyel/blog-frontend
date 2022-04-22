@@ -9,7 +9,7 @@
           <div class="mb-2">阅读数:&nbsp;{{ post.views }}</div>
         </div>
         <div class="container flex-row">
-          <div class="bg-secondary p-1 mr-3" style="background-color: #dedede" v-for="(tag, index) in post.tags" :key="index"><a href="#">{{ tag.name }}</a></div>
+          <div class="bg-secondary p-1 mr-3" style="background-color: #dedede" v-for="(tag, index) in post.tags" :key="index"><router-link :to="{name: 'Tag', params: {'slug': tag.slug}}">{{ tag.name }}</router-link></div>
         </div>
       </div>
 
@@ -78,5 +78,6 @@ export default {
   //    width 60%
   //    margin-left 20%
 
-
+  .github-markdown-body
+    padding 30px 0
 </style>

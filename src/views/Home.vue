@@ -11,7 +11,7 @@
         </div>
         <div class="container flex-row font-1 mb-5" v-if="post.tags.length > 0">
           <div class="bg-secondary p-1 mr-3" style="background-color: #dedede" v-for="(tag, index) in post.tags" :key="index">
-            <a class="color-secondary" href="#">{{ tag.name }}</a>
+            <router-link class="color-secondary" :to="{name: 'Tag', params: {'slug': tag.slug}}">{{ tag.name }}</router-link>
           </div>
         </div>
         <div class="color-secondary font-2 mb-5" style="white-space:normal; word-break:break-all;overflow:hidden;">

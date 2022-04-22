@@ -48,4 +48,6 @@ export default {
   .post-block:hover
     background-color #dee2e6
 
+  .github-markdown-body
+    padding 30px 0
 </style>
