@@ -29,17 +29,17 @@ export default {
 </script>
 
 <style lang="stylus">
-  @media screen and (min-width: 1500px)
-    #about
-      width 50%
-      margin-left 25%
+@media screen and (min-width: 1500px)
+  #about
+    width 50%
+    margin-left 25%
 
-  @media screen and (max-width 1500px)
-    #about
-      width 60%
-      margin-left 20%
+@media screen and (max-width 1500px)
+  #about
+    width 60%
+    margin-left 20%
 
-  .github-markdown-body
-    padding 30px 0
+.github-markdown-body
+  padding 30px 0
 
 </style>
