@@ -35,19 +35,19 @@ export default {
 
 <style lang="stylus">
 
-  @media screen and (min-width: 1500px)
-    #weekly
-      width 50%
-      margin-left 25%
+@media screen and (min-width: 1500px)
+  #weekly
+    width 50%
+    margin-left 25%
 
-  @media screen and (max-width 1500px)
-    #weekly
-      width 60%
-      margin-left 20%
+@media screen and (max-width 1500px)
+  #weekly
+    width 60%
+    margin-left 20%
 
-  .post-block:hover
-    background-color #dee2e6
+.post-block:hover
+  background-color #dee2e6
 
-  .github-markdown-body
-    padding 30px 0
+.github-markdown-body
+  padding 30px 0
 </style>
