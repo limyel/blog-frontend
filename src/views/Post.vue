@@ -63,21 +63,21 @@ export default {
 
 <style lang="stylus">
 
-  @font-face {
-    font-family: 'jetbrains-mono';
-    src: url('../assets/font/JetBrainsMono-Light.ttf')
-  }
+@font-face {
+  font-family: 'jetbrains-mono';
+  src: url('../assets/font/JetBrainsMono-Light.ttf')
+}
 
-  //@media screen and (min-width: 1500px)
-  //  #post
-  //    width 50%
-  //    margin-left 25%
-  //
-  //@media screen and (max-width 1500px)
-  //  #post
-  //    width 60%
-  //    margin-left 20%
+//@media screen and (min-width: 1500px)
+//  #post
+//    width 50%
+//    margin-left 25%
+//
+//@media screen and (max-width 1500px)
+//  #post
+//    width 60%
+//    margin-left 20%
 
-  .github-markdown-body
-    padding 30px 0
+.github-markdown-body
+  padding 30px 0
 </style>
