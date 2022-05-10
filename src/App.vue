@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <Theme></Theme>
+  <router-view/>
 </template>
 
 <style>
@@ -16,6 +16,6 @@
   }
 
   body * {
-    font-family: 'oppos-sons';
+    font-family: 'oppos-sons',fangsong;
   }
 </style>
