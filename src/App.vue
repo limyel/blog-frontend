@@ -16,14 +16,14 @@ import Footer from "./components/Footer.vue";
 
 @font-face {
   font-family: "oppos-sons";
-  src: url('./assets/font/OPPOSans-R.ttf')
+  src: url('./assets/font/OPPOSans-M.ttf')
 }
 
 #app {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  margin-left: 10%;
+  width: 66%;
+  margin-left: 17%;
   min-height: 100vh;
 }
 

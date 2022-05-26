@@ -15,7 +15,7 @@ let year = ref(date.getFullYear())
 <style scoped>
 #footer {
   text-align: center;
-  border-top: 1px solid #E1E1E1;
+  border-top: 2px solid #000000;
   padding: 20px 0;
 }
 

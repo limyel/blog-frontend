@@ -1,10 +1,14 @@
 <template>
   <div id="header">
-    <div id="logo">
+    <div class="logo">
       limyel's blog
+    </div>
+    <div class="description">
+      程序员，泉州人在福州，使用 Java、Python、Go 和 TypeScript 开发。
     </div>
     <div class="navication">
       <router-link :to="{name: 'Home'}" class="navication-item" :class="activeNav === 'Home'? 'nav-item-active': ''">首页</router-link>
+      <router-link :to="{name: 'Home'}" class="navication-item" :class="activeNav === 'Home'? 'nav-item-active': ''">首页2</router-link>
 <!--      <router-link :to="{name: 'Archives'}" class="container font-3 justify-content-center mr-8" :class="activeNav === 'Archives'? 'nav-item-active': ''">归档</router-link>-->
 <!--      <router-link :to="{name: 'Tags'}" class="container font-3 justify-content-center mr-8" :class="activeNav === 'Tags'? 'nav-item-active': ''">标签</router-link>-->
 <!--      <router-link :to="{name: 'Weekly'}" class="container font-3 justify-content-center mr-8" :class="activeNav === 'Weekly'? 'nav-item-active': ''">周报</router-link>-->
@@ -22,17 +26,26 @@
 <style scoped>
 #header {
   display: flex;
-  border-bottom: 1px solid #E1E1E1;
-  padding: 5px;
+  flex-direction: column;
+  border-bottom: 2px solid #000000;
+  padding: 10px;
   margin-bottom: 15px;
 }
 
-#logo {
+.logo {
   font-size: 35px;
+}
+
+.description {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: #6c757d;
 }
 
 .navication {
   display: flex;
+  flex-direction: row;
+  justify-content: right;
   line-height: 45px;
   flex-grow: 1;
   margin-left: 50px;
