@@ -17,6 +17,7 @@ let year = ref(date.getFullYear())
   text-align: center;
   border-top: 2px solid #000000;
   padding: 20px 0;
+  color: #6c757d;
 }
 
 a {

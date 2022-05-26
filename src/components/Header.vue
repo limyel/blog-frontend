@@ -29,7 +29,6 @@
   flex-direction: column;
   border-bottom: 2px solid #000000;
   padding: 10px;
-  margin-bottom: 15px;
 }
 
 .logo {
