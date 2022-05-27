@@ -129,12 +129,13 @@
       </div>
     </div>
 
-    <div class="page">
-      <button class="pre-page">上一页</button>
-      <button class="next-page">下一页</button>
-    </div>
+    <Page/>
   </div>
 </template>
+
+<script setup>
+import Page from "../components/Page.vue";
+</script>
 
 <style scoped>
 .tag-title {
@@ -163,16 +164,4 @@
   flex-grow: 1;
 }
 
-.page {
-  margin-top: 35px;
-}
-.next-page, .pre-page {
-  background-color: #ffffff;
-}
-.next-page {
-  margin-left: 10px;
-}
-.pre-page {
-  margin-right: 10px;
-}
 </style>

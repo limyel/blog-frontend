@@ -7,6 +7,7 @@ import About from '../pages/about.vue'
 import Post from '../pages/post.vue'
 import Tag from '../pages/tag.vue'
 import TagDetail from '../pages/tag_detail.vue'
+import Search from '../pages/search.vue'
 
 const routes = [
   {
@@ -33,6 +34,11 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search
   }
 ]
 
