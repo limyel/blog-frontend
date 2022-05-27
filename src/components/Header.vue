@@ -4,7 +4,7 @@
       limyel's blog
     </div>
     <div class="description">
-      程序员，泉州人在福州，使用 Java、Python、Go 和 TypeScript 开发。
+      程序员，泉州人在福州，使用 Java、Python、Go 和 JavaScript 开发。
     </div>
     <div class="navication">
       <router-link :to="{name: 'Home'}" class="navication-item" :class="activeNav === 'Home'? 'nav-item-active': ''">首页</router-link>
