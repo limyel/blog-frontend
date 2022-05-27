@@ -87,7 +87,7 @@ import Page from "../components/Page.vue";
 .search-input {
   display: flex;
   height: 40px;
-  padding: 30px 0;
+  margin: 35px 0;
 }
 .search-input * {
   font-size: 20px;
