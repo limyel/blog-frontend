@@ -34,4 +34,9 @@ body * {
 .main {
   flex-grow: 1;
 }
+
+<!-- markdown 样式 -->
+.github-markdown-body {
+  padding: 0 !important;
+}
 </style>
