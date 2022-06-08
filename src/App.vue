@@ -28,7 +28,7 @@ import Footer from "./components/Footer.vue";
 }
 
 body * {
-  font-family: "oppos-sons";
+  font-family: "oppos-sons", monospace;
 }
 
 .main {

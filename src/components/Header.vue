@@ -19,7 +19,7 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 #header {
   display: flex;
   flex-direction: column;
