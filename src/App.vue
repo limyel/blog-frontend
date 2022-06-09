@@ -1,42 +1,32 @@
 <template>
   <div id="app">
-    <Header/>
-    <router-view class="main"></router-view>
-    <Footer/>
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </nav>
+    <router-view/>
   </div>
 </template>
 
-<script setup>
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
-</script>
-
-<style>
-@import "./assets/css/reset.css";
-
-@font-face {
-  font-family: "oppos-sons";
-  src: url('./assets/font/OPPOSans-M.ttf')
-}
-
+<style lang="scss">
 #app {
-  display: flex;
-  flex-direction: column;
-  width: 66%;
-  margin-left: 17%;
-  min-height: 100vh;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 
-body * {
-  font-family: "oppos-sons", monospace;
-}
+nav {
+  padding: 30px;
 
-.main {
-  flex-grow: 1;
-}
+  a {
+    font-weight: bold;
+    color: #2c3e50;
 
-/* markdown 样式 */
-.github-markdown-body {
-  padding: 0 !important;
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
 }
 </style>
