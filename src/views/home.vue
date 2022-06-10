@@ -1,216 +1,19 @@
 <template>
   <div id="home">
-    <div class="archive-block">
+    <div class="archive-block" v-for="(year, index) in Object.keys(posts)" :key="index">
       <div class="archive-year">
-        2022
+        {{year}}
       </div>
-      <div class="archive-item">
+      <div class="archive-item" v-for="(post, index) in posts[year]" :key="index">
         <div class="archive-item-date">
-          五月 26
+          五月 26 {{post.createTime}}
         </div>
         <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
+          <router-link :to="{name: 'tag_detail'}">{{post.title}}</router-link>
         </div>
-        <div class="archive-item-tags">
+        <div class="archive-item-tags" v-for="(tag, index) in post.tagList" :key="index">
           <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
-          </div>
-        </div>
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-        <div class="archive-item-tags">
-          <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
-          </div>
-        </div>
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-        <div class="archive-item-tags">
-          <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="archive-block">
-      <div class="archive-year">
-        2022
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-        <div class="archive-item-tags">
-          <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
-          </div>
-        </div>
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-        <div class="archive-item-tags">
-          <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
-          </div>
-        </div>
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-        <div class="archive-item-tags">
-          <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="archive-block">
-      <div class="archive-year">
-        2022
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-        <div class="archive-item-tags">
-          <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
-          </div>
-        </div>
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-        <div class="archive-item-tags">
-          <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
-          </div>
-        </div>
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-        <div class="archive-item-tags">
-          <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="archive-block">
-      <div class="archive-year">
-        2022
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-        <div class="archive-item-tags">
-          <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
-          </div>
-        </div>
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-        <div class="archive-item-tags">
-          <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
-          </div>
-        </div>
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-        <div class="archive-item-tags">
-          <div class="archive-item-tag">
-            <a href="">Python</a>
-          </div>
-          <div class="archive-item-tag">
-            <a href="">入门</a>
+            <a href="">{{tag.name}}</a>
           </div>
         </div>
       </div>
@@ -222,11 +25,24 @@
 
 <script>
 import Page from "../components/Page.vue";
+import {apiPostInHome} from "@/api/post";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      posts: Object
+    }
+  },
   components: {
     Page
+  },
+  mounted() {
+    apiPostInHome(1).then(response => {
+      this.posts = response.data;
+      console.log(this.posts)
+      console.log(Object.keys(this.posts));
+    })
   }
 }
 </script>
