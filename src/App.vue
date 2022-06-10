@@ -23,7 +23,9 @@ export default {
 
 @font-face {
   font-family: "oppos-sons";
-  src: url('./assets/font/OPPOSans-M.ttf')
+  src: url('./assets/font/OPPOSans-M.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
 #app {
