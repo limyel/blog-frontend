@@ -25,7 +25,7 @@ export default {
 <style scoped>
 #footer {
   text-align: center;
-  border-top: 2px solid #000000;
+  border-top: 2px solid #eaeaea;
   padding: 20px 0;
   color: #6c757d;
   margin-top: 30px;

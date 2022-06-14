@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <div class="archive-block" v-for="(year, index) in Object.keys(posts)" :key="index">
+    <div class="archive-block" v-for="(year, index) in yearList" :key="index">
       <div class="archive-year">
         {{year}}
       </div>
@@ -9,7 +9,7 @@
           {{post.createTime | showMonthDayLocal}}
         </div>
         <div class="archive-item-title">
-          <router-link :to="{name: 'tag_detail'}">{{post.title}}</router-link>
+          <router-link :to="{name: 'post', params: {'slug': post.slug}}">{{post.title}}</router-link>
         </div>
         <div class="archive-item-tags" v-for="(tag, index) in post.tagList" :key="index">
           <div class="archive-item-tag">
@@ -32,7 +32,8 @@ export default {
   name: "Home",
   data() {
     return {
-      posts: Object
+      posts: Object,
+      yearList: []
     }
   },
   components: {
@@ -41,7 +42,7 @@ export default {
   mounted() {
     apiPostInHome(1).then(response => {
       this.posts = response.data.result;
-
+      this.yearList = Object.keys(this.posts).sort().reverse()
     })
   },
   filters: {
@@ -74,7 +75,8 @@ export default {
 }
 
 .archive-item-date {
-  margin-right: 50px;
+  /*margin-right: 50px;*/
+  width: 100px;
 }
 
 .archive-item-title {

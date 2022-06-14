@@ -30,7 +30,7 @@ export default {
 #header {
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid #000000;
+  /*border-bottom: 2px solid #000000;*/
   padding: 10px;
 }
 
