@@ -7,7 +7,10 @@
 
 <script>
 export default {
-  name: "Page"
+  name: "Page",
+  props: {
+    pageInfo: Object
+  }
 }
 </script>
 

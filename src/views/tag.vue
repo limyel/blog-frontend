@@ -1,55 +1,38 @@
 <template>
   <div>
-    <div class="tag">
+    <div class="tag" v-for="(tag, index) in tagList" :key="index">
       <div class="tag—link">
-        <router-link to="">Python</router-link>
+        <router-link to="">{{tag.name}}</router-link>
       </div>
       <div class="tag-post-num">
-        10
+        {{tag.postNum}}
       </div>
     </div>
 
-    <div class="tag">
-      <div class="tag—link">
-        <router-link to="">Python</router-link>
-      </div>
-      <div class="tag-post-num">
-        10
-      </div>
-    </div>
-
-    <div class="tag">
-      <div class="tag—link">
-        <router-link to="">Python</router-link>
-      </div>
-      <div class="tag-post-num">
-        10
-      </div>
-    </div>
-
-    <div class="tag">
-      <div class="tag—link">
-        <router-link to="">Python</router-link>
-      </div>
-      <div class="tag-post-num">
-        10
-      </div>
-    </div>
-
-    <div class="tag">
-      <div class="tag—link">
-        <router-link to="">Python</router-link>
-      </div>
-      <div class="tag-post-num">
-        10
-      </div>
-    </div>
+    <Page v-if="false"/>
   </div>
 </template>
 
 <script>
+import Page from "../components/Page.vue";
+import {apiPageTag} from "@/api/tag";
+
 export default {
-  name: "tag"
+  name: "tag",
+  components: {
+    Page
+  },
+  data() {
+    return {
+      tagList: []
+    }
+  },
+  mounted() {
+    apiPageTag(1).then(response => {
+      this.tagList = response.data.list;
+      console.log(this.tagList);
+    })
+  }
 }
 </script>
 

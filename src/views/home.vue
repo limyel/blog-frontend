@@ -6,7 +6,7 @@
       </div>
       <div class="archive-item" v-for="(post, index) in posts[year]" :key="index">
         <div class="archive-item-date">
-          五月 26 {{post.createTime}}
+          {{post.createTime | showMonthDayLocal}}
         </div>
         <div class="archive-item-title">
           <router-link :to="{name: 'tag_detail'}">{{post.title}}</router-link>
@@ -19,13 +19,14 @@
       </div>
     </div>
 
-    <Page/>
+    <Page v-if="false"/>
   </div>
 </template>
 
 <script>
 import Page from "../components/Page.vue";
 import {apiPostInHome} from "@/api/post";
+import {showMonthDayLocal} from "@/utils/DateTimeFormat";
 
 export default {
   name: "Home",
@@ -39,10 +40,12 @@ export default {
   },
   mounted() {
     apiPostInHome(1).then(response => {
-      this.posts = response.data;
-      console.log(this.posts)
-      console.log(Object.keys(this.posts));
+      this.posts = response.data.result;
+
     })
+  },
+  filters: {
+    showMonthDayLocal
   }
 }
 </script>

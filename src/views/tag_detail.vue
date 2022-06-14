@@ -4,142 +4,57 @@
       Python
     </div>
 
-    <div class="post-list">
-      <div class="archive-block">
-        <div class="archive-year">
-          2022
-        </div>
-        <div class="archive-item">
-          <div class="archive-item-date">
-            五月 26
-          </div>
-          <div class="archive-item-title">
-            <a href="">Python 从入门到入坟</a>
-          </div>
-        </div>
-
-        <div class="archive-item">
-          <div class="archive-item-date">
-            五月 26
-          </div>
-          <div class="archive-item-title">
-            <a href="">Python 从入门到入坟</a>
-          </div>
-        </div>
-
-        <div class="archive-item">
-          <div class="archive-item-date">
-            五月 26
-          </div>
-          <div class="archive-item-title">
-            <a href="">Python 从入门到入坟</a>
-          </div>
-        </div>
-
-        <div class="archive-item">
-          <div class="archive-item-date">
-            五月 26
-          </div>
-          <div class="archive-item-title">
-            <a href="">Python 从入门到入坟</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="archive-block">
+    <div class="archive-block" v-for="(year, index) in Object.keys(posts)" :key="index">
       <div class="archive-year">
-        2022
+        {{year}}
       </div>
-      <div class="archive-item">
+      <div class="archive-item" v-for="(post, index) in posts[year]" :key="index">
         <div class="archive-item-date">
-          五月 26
+          {{post.createTime | showMonthDayLocal}}
         </div>
         <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-      </div>
-
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-      </div>
-
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-      </div>
-
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
+          <router-link :to="{name: 'post', params: {'slug': post.slug}}">{{post.title}}</router-link>
         </div>
       </div>
     </div>
 
-    <div class="archive-block">
-      <div class="archive-year">
-        2022
-      </div>
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-      </div>
-
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-      </div>
-
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-      </div>
-
-      <div class="archive-item">
-        <div class="archive-item-date">
-          五月 26
-        </div>
-        <div class="archive-item-title">
-          <a href="">Python 从入门到入坟</a>
-        </div>
-      </div>
-    </div>
-
-    <Page/>
+    <Page v-if="false"/>
   </div>
 </template>
 
 <script>
 import Page from "../components/Page.vue";
+import {apiPostInTag} from "@/api/post";
+import {showMonthDayLocal} from "@/utils/DateTimeFormat";
 
 export default {
   name: "tag_detail",
   components: {
     Page
+  },
+  data() {
+    return {
+      tag: {
+        name: "Python",
+        slug: "python"
+      },
+      posts: Object
+    }
+  },
+  mounted() {
+    apiPostInTag(this.tag.slug, 1).then(response => {
+      this.posts = response.data.result;
+    })
+  },
+  methods: {
+    pagePost(tagSlug, pageNum) {
+      apiPostInTag(tagSlug, pageNum).then(response => {
+        this.postList = response.data.list;
+      })
+    }
+  },
+  filters: {
+    showMonthDayLocal
   }
 }
 </script>
@@ -164,7 +79,8 @@ export default {
 }
 
 .archive-item-date {
-  margin-right: 50px;
+  /*margin-right: 50px;*/
+  width: 100px;
 }
 
 .archive-item-title {
